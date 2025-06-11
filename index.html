@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Virtual Urea Detection in Milk</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Fullscreen Background Section -->
+  <div id="intro-screen">
+    <img src="images/bg.png" alt="Lab Background" class="background-image">
+    <div class="intro-overlay">
+      <h1>🧪 Virtual Lab: Urea Detection in Milk</h1>
+      <p>Get ready to perform the experiment virtually!</p>
+      <button onclick="startExperiment()">Start Experiment</button>
+    </div>
+  </div>
+
+  <!-- Hidden Lab Section -->
+  <div id="lab-container" style="display: none;">
+    <h1>🧪 Virtual Lab: Urea Detection in Milk</h1>
+    <div class="step-description" id="step-text">Click "Next Step" to begin.</div>
+
+    <div class="test-tubes">
+      <div>
+        <h3>Sample A</h3>
+        <img id="tubeA" src="images/testtube_empty.png" alt="Test Tube A" />
+      </div>
+      <div>
+        <h3>Sample B</h3>
+        <img id="tubeB" src="images/testtube_empty.png" alt="Test Tube B" />
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="nextStep()">▶ Next Step</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
