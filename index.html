@@ -3,42 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Virtual Urea Detection in Milk</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Milk Adulteration Virtual Lab</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffaf0;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #6d4c41;
+    }
+
+    p {
+      color: #555;
+    }
+
+    .card {
+      background: #fff;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s;
+      text-decoration: none;
+      color: #333;
+      display: block;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      background: #fff3e0;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      color: #e65100;
+    }
+
+    .icon {
+      font-size: 30px;
+    }
+  </style>
 </head>
 <body>
+  <h1>🥛 Analysis of Adulteration in Milk & Milk Products</h1>
+  <p>Select an experiment to begin</p>
 
-  <!-- Fullscreen Background Section -->
-  <div id="intro-screen">
-    <img src="images/bg.png" alt="Lab Background" class="background-image">
-    <div class="intro-overlay">
-      <h1>🧪 Virtual Lab: Urea Detection in Milk</h1>
-      <p>Get ready to perform the experiment virtually!</p>
-      <button onclick="startExperiment()">Start Experiment</button>
-    </div>
-  </div>
+  <a href="exp8a.html" class="card">
+    <div class="icon">🧪</div>
+    <h2>Starch Detection in Milk</h2>
+    <p>Check for starch adulteration using iodine test.</p>
+  </a>
 
-  <!-- Hidden Lab Section -->
-  <div id="lab-container" style="display: none;">
-    <h1>🧪 Virtual Lab: Urea Detection in Milk</h1>
-    <div class="step-description" id="step-text">Click "Next Step" to begin.</div>
+  <a href="#" class="card">
+    <div class="icon">🧪</div>
+    <h2> Urea Detection in Milk</h2>
+    <p>Identify added urea with DMAB reagent.</p>
+  </a>
 
-    <div class="test-tubes">
-      <div>
-        <h3>Sample A</h3>
-        <img id="tubeA" src="images/testtube_empty.png" alt="Test Tube A" />
-      </div>
-      <div>
-        <h3>Sample B</h3>
-        <img id="tubeB" src="images/testtube_empty.png" alt="Test Tube B" />
-      </div>
-    </div>
+  <a href="#" class="card">
+    <div class="icon">🧪</div>
+    <h2> Detergent Detection in Milk</h2>
+    <p>Test for detergent using methylene blue and chloroform.</p>
+  </a>
 
-    <div class="controls">
-      <button onclick="nextStep()">▶ Next Step</button>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
