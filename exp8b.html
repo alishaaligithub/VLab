@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urea Detection in Milk Experiment</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #eef3f9;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    #lab {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      transform-origin: top left;
+    }
+
+    @media screen and (max-width: 1280px), screen and (max-height: 720px) {
+      #lab {
+        transform: scale(calc(min(100vw / 1280, 100vh / 720)));
+      }
+    }
+
+    #lab img, #dmab-container {
+      position: absolute;
+    }
+
+    #bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    #instruction {
+      position: absolute;
+      top: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #114b5f;
+      z-index: 10;
+    }
+
+    #stand {
+      width: 195px;
+      height: 12%;
+      bottom: 115px;
+      left: 46.5%;
+      z-index: 2;
+    }
+
+    #tube1, #tube2 {
+      width: 25px;
+      height: 22%;
+      bottom: 125px;
+      z-index: 2;
+      transition: transform 1s;
+    }
+
+    #tube1 { left: 47.3%; }
+    #tube2 { left: 49.2%; z-index: 4 !important; }
+
+    #tubefilled1, #tubefilled2 {
+      width: 25px;
+      height: 22%;
+      bottom: 125px;
+      display: none;
+      z-index: 3;
+    }
+
+    #tubefilled1 { left: 47.3%; }
+    #tubefilled2 { left: 49.2%; }
+
+    #stand-front {
+      width: 195px;
+      height: 6%;
+      bottom: 151px;
+      left: 46%;
+      z-index: 4;
+    }
+
+    #milk1, #milk2 {
+      width: 250px;
+      cursor: pointer;
+      z-index: 3;
+      transition: transform 0.5s ease;
+    }
+
+    #milk1 { top: 65%; left: 5%; }
+    #milk2 { top: 55%; left: 15%; }
+
+    #pippete {
+      top: 65%;
+      left: 60%;
+      width: 250px;
+      height: 250px;
+      z-index: 3;
+      transform: rotate(-90deg);
+      transform-origin: center center;
+      transition: all 1s ease;
+      cursor: pointer;
+    }
+
+    #dmab-container {
+      top: 65%;
+      left: 30%;
+      width: 60px;
+      cursor: pointer;
+      z-index: 4;
+    }
+
+    #dmab-bottle {
+      width: 220px;
+      height: 250px;
+    }
+
+    #dmab-cap {
+      position: absolute;
+      top: 36px;
+      left: 76px;
+      width: 65px;
+      z-index: 5;
+      transition: all 0.5s ease;
+    }
+
+    #start-btn, #reset-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #114b5f;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    #reset-btn {
+      right: 150px;
+      background-color: #bb2d3b;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+    <div id="lab">
+      <img src="images/bg.png" id="bg" />
+      <img src="images/stand.png" id="stand" />
+      <img src="images/tube.png" class="tube" id="tube1" />
+      <img src="images/tube.png" class="tube" id="tube2" />
+      <img src="images/Test-tube-milk.png" id="tubefilled1" />
+      <img src="images/Test-tube-milk.png" id="tubefilled2" />
+      <img src="images/front.png" id="stand-front" />
+      <img src="images/milk.png" id="milk1" />
+      <img src="images/MilkB.png" id="milk2" />
+      <img src="images/pippete.png" id="pippete" onclick="handlePipetteClick()" />
+
+      <div id="dmab-container">
+        <img src="images/DMAB-Bottle.png" id="dmab-bottle" />
+        <img src="images/DMAB-Bottle-cap.png" id="dmab-cap" />
+      </div>
+
+      <div id="instruction">Click on the Pipette to take 1ml milk from Sample A</div>
+      <button id="start-btn" onclick="startExperiment()">Start Experiment</button>
+      <button id="reset-btn" onclick="resetExperiment()">Reset Experiment</button>
+    </div>
+</body>
+</html>

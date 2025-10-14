@@ -63,8 +63,7 @@
     #tube1 { left: 47.3%; }
     #tube2 {
       left: 49.2%;
-      z-index: 9999 !important;
-      pointer-events: auto !important;
+      z-index: 4 !important;
     }
 
     #stand-front {

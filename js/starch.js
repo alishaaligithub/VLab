@@ -122,6 +122,7 @@
         step = 6;
       }, 1500);
     }
+
     function moveTestTubesBack() {
   if (step !== 6) return;
 
